@@ -1,6 +1,5 @@
 package org.systemdesign.service;
 
-import org.systemdesign.model.Transaction;
 import org.systemdesign.model.User;
 import org.systemdesign.model.Wallet;
 
@@ -23,4 +22,16 @@ public class UserService {
         this.users.add(user);
         return "User " + userName + " is registered";
     }
+
+    public String deregisterUser(String userName){
+        for (User u : this.users){
+            if (u.userName.equals(userName)){
+                users.remove(u);
+                break;
+            }
+        }
+        return "";
+    }
+
+
 }
